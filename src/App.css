@@ -1,128 +1,176 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* ---------------------------------------------
+   PFE APP – Estilos complementares ao Tailwind
+   --------------------------------------------- */
+
+/* Reset suave para harmonizar com Tailwind */
+* {
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-.todo-list-app {
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.input-section {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.input-section input {
-  flex-grow: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.input-section button {
-  padding: 10px 15px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.todo-items {
-  list-style: none;
+html, body {
+  margin: 0;
   padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f9fafb; /* gray-50 */
+  color: #111827; /* gray-900 */
 }
 
-.todo-items li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  margin-bottom: 8px;
-  background-color: white;
-  border-radius: 4px;
-  border-left: 5px solid #007bff;
+/* Área principal */
+.pfe-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
 }
 
-.todo-items li.completed {
-  opacity: 0.6;
-  border-left: 5px solid #28a745;
+/* Cards e seções */
+.pfe-card {
+  background: #ffffff;
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
 }
 
-.todo-items li.completed .todo-text {
-  text-decoration: line-through;
-  color: #888;
+/* Títulos */
+.pfe-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
-.todo-text {
-  flex-grow: 1;
+/* Inputs padrão */
+.pfe-input,
+.pfe-textarea,
+.pfe-select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 0.5rem; /* rounded */
+  background: #fff;
+  font-size: 0.95rem;
 }
 
-.toggle-button {
-  margin-left: 10px;
-  padding: 5px 10px;
-  background-color: #007bff;
+.pfe-input:focus,
+.pfe-textarea:focus,
+.pfe-select:focus {
+  border-color: #2563eb; /* blue-600 */
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(37 99 235 / 0.3);
+}
+
+/* Botões base */
+.pfe-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: 0.15s;
+}
+
+.pfe-btn-primary {
+  background: #2563eb;
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.8em;
 }
 
-.delete-button {
-  margin-left: 5px;
-  padding: 5px 10px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 1em;
+.pfe-btn-primary:hover {
+  background: #1e4fcc;
+}
+
+.pfe-btn-danger {
+  background: #dc2626;
+  color: white;
+}
+
+.pfe-btn-danger:hover {
+  background: #b91c1c;
+}
+
+/* Botão neutro */
+.pfe-btn-outline {
+  background: white;
+  border: 1px solid #9ca3af; /* gray-400 */
+  color: #374151; /* gray-700 */
+}
+
+.pfe-btn-outline:hover {
+  background: #f3f4f6;
+}
+
+/* Listas com espaçamento */
+.pfe-list {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Itens listados */
+.pfe-item {
+  padding: 0.75rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+}
+
+/* Linhas pequenas (contatos, kit etc) */
+.pfe-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Checkboxes */
+.pfe-checkbox {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #2563eb;
+}
+
+/* Divisor */
+.pfe-divider {
+  margin: 1.5rem 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Caixa de aviso (ex.: lembrete de revisão) */
+.pfe-warning-box {
+  background: #fef9c3; /* yellow-100 */
+  border: 1px solid #facc15; /* yellow-400 */
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Guia de ações (lista numerada) */
+.pfe-steps ol {
+  padding-left: 1.25rem;
+}
+
+.pfe-steps li {
+  margin-bottom: 0.25rem;
+}
+
+/* Elemento clicável para números de emergência */
+.pfe-emergency-link {
+  display: block;
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  transition: 0.15s;
+}
+
+.pfe-emergency-link:hover {
+  background: #e0f2fe; /* blue-100 */
+  border-color: #2563eb; /* blue-600 */
+}
+
+/* Rodapé */
+.pfe-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-size: 0.75rem;
+  color: #6b7280; /* gray-500 */
+  border-top: 1px solid #e5e7eb;
 }
