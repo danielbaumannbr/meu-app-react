@@ -36,6 +36,20 @@ function App() {
 
   const handleToggleComplete = (id) => {
     // Lógica para marcar como completo
+    // Cria um novo array mapeando o array `todos`
+    const updatedTodos = todos.map(todo => {
+      // Se o ID corresponder ao ID clicado...
+      if (todo.id === id) {
+        // ... retorna um novo objeto de tarefa com 'completed' invertido
+        // (também usando spread para copiar o resto das propriedades)
+        return { ...todo, completed: !todo.completed };
+      }
+      // Caso contrário, retorna a tarefa inalterada
+      return todo;
+    });
+
+    // Atualiza o estado com o novo array
+    setTodos(updatedTodos);
   };
 
   // 3. Renderização (Próximo Passo)
@@ -66,7 +80,10 @@ function App() {
                 {todo.text}
               </span>
               {/* Botão para marcar/desmarcar */}
-              <button>
+              <button
+                // Passamos o ID da tarefa para a função
+                onClick={() => handleToggleComplete(todo.id)}
+              >
                 {todo.completed ? 'Desmarcar' : 'Completar'}
               </button>
             </li>
